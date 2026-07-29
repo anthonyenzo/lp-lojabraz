@@ -6,42 +6,48 @@ const packs = [
   {
     id: "sertanejo",
     name: "Sertanejo",
-    label: "PACK @brazhits_ +500 Clipes Sertanejo 2026",
+    label: "Pack Sertanejo",
+    tone: "lime",
     image: "pack-sertanejo-2026.jpg",
     checkout: "https://checkout.brazhits.com.br/checkout/cms3nyhqu00q101ojp5uriham?offer=7JM1ZJ5",
   },
   {
     id: "sertanejo-raiz",
     name: "Sertanejo Raiz",
-    label: "PACK @brazhits_ +200 Clipes Sertanejo Raiz/Modão",
+    label: "Pack Sertanejo Raiz",
+    tone: "amber",
     image: "pack-sertanejo-raiz-modao.jpg",
     checkout: "https://checkout.brazhits.com.br/checkout/cms3qwbhf02ey01q2uric6p6b?offer=ct9lej3",
   },
   {
     id: "forro-arrocha",
     name: "Forró / Arrocha",
-    label: "PACK @brazhits_ +200 Clipes Forró/Arrocha 2026",
+    label: "Pack Forró + Arrocha",
+    tone: "orange",
     image: "pack-forro-arrocha-2026.jpg",
     checkout: "https://checkout.brazhits.com.br/checkout/cms50qbo101h701pxcrnwl7zn?offer=142tf5w",
   },
   {
     id: "pagode",
     name: "Pagode",
-    label: "PACK @brazhits_ +200 Clipes Pagode 2026",
+    label: "Pack Pagode",
+    tone: "cyan",
     image: "pack-pagode-2026.jpg",
     checkout: "https://checkout.brazhits.com.br/checkout/cms50tr7p01jg01pxv6hv8di0?offer=3wkrmwo",
   },
   {
     id: "rock-nacional",
     name: "Rock Nacional",
-    label: "PACK @brazhits_ +200 Clipes Rock Nacional",
+    label: "Pack Rock Nacional",
+    tone: "violet",
     image: "pack-rock-nacional.jpg",
     checkout: "https://checkout.brazhits.com.br/checkout/cms514n1801rx01ocfhh2ar5y?offer=d58z8ku",
   },
   {
     id: "gospel",
     name: "Gospel",
-    label: "PACK @brazhits_ +200 Clipes Gospel 2026",
+    label: "Pack Gospel",
+    tone: "blue",
     image: "pack-gospel-2026.jpg",
     checkout: "https://checkout.brazhits.com.br/checkout/cms50v6lf01kk01pxtf8e60hm?offer=064ob69",
   },
@@ -96,7 +102,7 @@ export default function Home() {
         <div className="pack-grid">
           {packs.map((pack, index) => (
             <a
-              className="pack-card"
+              className={`pack-card tone-${pack.tone}`}
               id={pack.id}
               key={pack.id}
               href={pack.checkout}
@@ -106,11 +112,14 @@ export default function Home() {
               <div className="pack-cover">
                 <img
                   src={`${BASE_PATH}/${pack.image}`}
-                  alt={`Capa do ${pack.label}`}
+                  alt=""
                   width="1200"
                   height="1200"
                   loading={index < 2 ? "eager" : "lazy"}
                 />
+                <div className="cover-top"><span>Braz</span><strong>Hits</strong></div>
+                <div className="sound-bars" aria-hidden="true"><i /><i /><i /><i /><i /></div>
+                <div className="cover-copy"><strong>{pack.name}</strong></div>
                 <span className="cover-action" aria-hidden="true"><ArrowIcon /></span>
               </div>
               <h3>{pack.label}</h3>
