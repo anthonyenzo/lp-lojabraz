@@ -406,6 +406,7 @@ a:hover .arrow { transform: translateX(4px); }
 .tone-cyan .pack-cover { --accent: #00d8f0; }
 .tone-violet .pack-cover { --accent: #a886ff; }
 .tone-blue .pack-cover { --accent: #5f9dff; }
+.tone-rose .pack-cover { --accent: #ff7a9f; }
 
 .help-strip {
   border-block: 1px solid var(--line);
