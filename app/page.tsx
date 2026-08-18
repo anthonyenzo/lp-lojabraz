@@ -6,10 +6,11 @@ const BASE_PATH = process.env.NEXT_PUBLIC_DEPLOY_BASE_PATH ?? "";
 type CatalogType = "clips" | "musicas";
 type Pack = {
   id: string; name: string; label: string; tone: string; image: string;
-  checkout: string; quantity: string; quality: string; type: CatalogType;
+  checkout: string; quantity: string; quality: string; type: CatalogType; featured?: boolean;
 };
 
 const clipPacks: Pack[] = [
+  { id: "clips-super-pack", name: "Todos os Clipes", label: "Super Pack de Clipes", tone: "premium", image: "pack-sertanejo-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmsrukfkk00sw01pw02ag439i?offer=osiy9l6", quantity: "+1.700 CLIPES", quality: "MP4 1080p", type: "clips", featured: true },
   { id: "clips-sertanejo", name: "Sertanejo", label: "Pack de Clipes Sertanejo", tone: "lime", image: "pack-sertanejo-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms3nyhqu00q101ojp5uriham?offer=7JM1ZJ5", quantity: "+500 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-sertanejo-raiz", name: "Sertanejo Raiz", label: "Pack de Clipes Sertanejo Raiz", tone: "amber", image: "pack-sertanejo-raiz-modao.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms3qwbhf02ey01q2uric6p6b?offer=ct9lej3", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-mpb-antigo", name: "MPB Antigo", label: "Pack de Clipes MPB Antigo", tone: "rose", image: "pack-mpb-antigo.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmsufz27u06cd01pzpp5wjgbk?offer=zlpfum6", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
@@ -20,9 +21,11 @@ const clipPacks: Pack[] = [
 ];
 
 const musicPacks: Pack[] = [
+  { id: "musicas-super-pack", name: "Todos os Gêneros", label: "Super Pack de Músicas", tone: "premium", image: "musicas-sertanejo-2026.png", checkout: "https://checkout.brazhits.com.br/checkout/cmswmpoyp0sry01q4orq797i4?offer=dqdesgy", quantity: "+3.000 MÚSICAS", quality: "MP3 320 kbps", type: "musicas", featured: true },
   { id: "musicas-sertanejo", name: "Sertanejo 2026", label: "Pack de Músicas Sertanejo", tone: "lime", image: "musicas-sertanejo-2026.png", checkout: "https://checkout.brazhits.com.br/checkout/cmsdixa8e0n4w01omtl42bd2t?offer=4qvvse2", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
   { id: "musicas-sertanejo-raiz", name: "Sertanejo Raiz", label: "Pack de Músicas Sertanejo Raiz", tone: "amber", image: "musicas-sertanejo-raiz-modao.png", checkout: "https://checkout.brazhits.com.br/checkout/cmseva9y80d1301pvob0fcl3e?offer=av91syt", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
   { id: "musicas-mpb-antigo", name: "MPB Antigo", label: "Pack de Músicas MPB Antigo", tone: "rose", image: "musicas-mpb-antigo.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmsuhszbh07ho01pzarg3bwlc?offer=i9a1fy7", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
+  { id: "musicas-pagode", name: "Pagode 2026", label: "Pack de Músicas Pagode", tone: "cyan", image: "pack-pagode-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmsxpqyis00m701pqtq15nal0?offer=bvobrl2", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
   { id: "musicas-gospel", name: "Gospel 2026", label: "Pack de Músicas Gospel", tone: "blue", image: "musicas-gospel-2026.png", checkout: "https://checkout.brazhits.com.br/checkout/cmsfh75xe090801oib5gfw1te?offer=zzn196z", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
   { id: "musicas-rock-nacional", name: "Rock Nacional", label: "Pack de Músicas Rock Nacional", tone: "violet", image: "musicas-rock-nacional.png", checkout: "https://checkout.brazhits.com.br/checkout/cmsfhjb36094h01oi0dsomtab?offer=kc43nl3", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
 ];
@@ -63,10 +66,10 @@ export default function Home() {
       <nav className="catalog-nav" aria-label="Escolha o tipo de Pack">
         <div className="shell catalog-switch">
           <button className={isClips ? "active" : ""} type="button" aria-pressed={isClips} onClick={() => selectCatalog("clips")}>
-            <span>Packs de Clipes</span><small>7 opções em MP4 1080p</small>
+            <span>Packs de Clipes</span><small>8 opções em MP4 1080p</small>
           </button>
           <button className={!isClips ? "active" : ""} type="button" aria-pressed={!isClips} onClick={() => selectCatalog("musicas")}>
-            <span>Packs de Músicas</span><small>5 opções em MP3 320 kbps</small>
+            <span>Packs de Músicas</span><small>7 opções em MP3 320 kbps</small>
           </button>
         </div>
       </nav>
@@ -83,7 +86,7 @@ export default function Home() {
         <div className="pack-grid" key={activeCatalog}>
           {packs.map((pack, index) => (
             <a
-              className={`pack-card tone-${pack.tone} type-${pack.type}`}
+              className={`pack-card tone-${pack.tone} type-${pack.type}${pack.featured ? " featured-pack" : ""}`}
               id={pack.id}
               key={pack.id}
               href={pack.checkout}
@@ -98,7 +101,7 @@ export default function Home() {
                 <span className="cover-action" aria-hidden="true"><ArrowIcon /></span>
               </div>
               <div className="pack-details">
-                <span className="pack-kind">{isClips ? "PACK DE CLIPES" : "PACK DE MÚSICAS"}</span>
+                <span className="pack-kind">{pack.featured ? "SUPER PACK • TODOS OS GÊNEROS" : isClips ? "PACK DE CLIPES" : "PACK DE MÚSICAS"}</span>
                 <h3>{pack.label}</h3>
                 <p className="pack-quality">{pack.quality} <span>•</span> Acesso imediato</p>
               </div>

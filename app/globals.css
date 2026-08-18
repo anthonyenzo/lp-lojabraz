@@ -661,3 +661,24 @@ a:hover .arrow { transform: translateX(4px); }
   .pack-card .pack-details h3 { margin-top: 6px; font-size: 21px; line-height: 1.35; }
   .pack-quality { margin-top: 7px; font-size: 16px; line-height: 1.5; }
 }
+
+.tone-premium .pack-cover { --accent: #42ff72; }
+.featured-pack .pack-cover {
+  border-width: 2px;
+  box-shadow: 0 26px 80px rgba(24, 241, 50, 0.13), inset 0 0 0 1px rgba(0, 216, 240, 0.08);
+}
+.featured-pack .pack-cover::before {
+  background:
+    linear-gradient(180deg, rgba(0, 17, 26, 0.16), rgba(0, 13, 21, 0.84)),
+    linear-gradient(115deg, rgba(24, 241, 50, 0.23), rgba(0, 216, 240, 0.08) 58%, transparent);
+}
+.featured-pack .pack-kind {
+  color: var(--green);
+}
+.featured-pack .pack-details h3 {
+  color: #fff;
+  font-size: 21px;
+}
+@media (max-width: 560px) {
+  .featured-pack .pack-details h3 { font-size: 23px; }
+}
