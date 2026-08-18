@@ -10,7 +10,7 @@ type Pack = {
 };
 
 const clipPacks: Pack[] = [
-  { id: "clips-super-pack", name: "Todos os Clipes", label: "Super Pack de Clipes", tone: "premium", image: "pack-sertanejo-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmsrukfkk00sw01pw02ag439i?offer=osiy9l6", quantity: "+1.700 CLIPES", quality: "MP4 1080p", type: "clips", featured: true },
+  { id: "clips-super-pack", name: "Todos os Clipes", label: "Super Pack de Clipes", tone: "premium", image: "super-pack-clipes.jpeg", checkout: "https://checkout.brazhits.com.br/checkout/cmsrukfkk00sw01pw02ag439i?offer=osiy9l6", quantity: "+1.700 CLIPES", quality: "MP4 1080p", type: "clips", featured: true },
   { id: "clips-sertanejo", name: "Sertanejo", label: "Pack de Clipes Sertanejo", tone: "lime", image: "pack-sertanejo-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms3nyhqu00q101ojp5uriham?offer=7JM1ZJ5", quantity: "+500 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-sertanejo-raiz", name: "Sertanejo Raiz", label: "Pack de Clipes Sertanejo Raiz", tone: "amber", image: "pack-sertanejo-raiz-modao.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms3qwbhf02ey01q2uric6p6b?offer=ct9lej3", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-mpb-antigo", name: "MPB Antigo", label: "Pack de Clipes MPB Antigo", tone: "rose", image: "pack-mpb-antigo.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmsufz27u06cd01pzpp5wjgbk?offer=zlpfum6", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
@@ -21,7 +21,7 @@ const clipPacks: Pack[] = [
 ];
 
 const musicPacks: Pack[] = [
-  { id: "musicas-super-pack", name: "Todos os Gêneros", label: "Super Pack de Músicas", tone: "premium", image: "musicas-sertanejo-2026.png", checkout: "https://checkout.brazhits.com.br/checkout/cmswmpoyp0sry01q4orq797i4?offer=dqdesgy", quantity: "+3.000 MÚSICAS", quality: "MP3 320 kbps", type: "musicas", featured: true },
+  { id: "musicas-super-pack", name: "Todos os Gêneros", label: "Super Pack de Músicas", tone: "premium", image: "super-pack-musicas.jpeg", checkout: "https://checkout.brazhits.com.br/checkout/cmswmpoyp0sry01q4orq797i4?offer=dqdesgy", quantity: "+3.000 MÚSICAS", quality: "MP3 320 kbps", type: "musicas", featured: true },
   { id: "musicas-sertanejo", name: "Sertanejo 2026", label: "Pack de Músicas Sertanejo", tone: "lime", image: "musicas-sertanejo-2026.png", checkout: "https://checkout.brazhits.com.br/checkout/cmsdixa8e0n4w01omtl42bd2t?offer=4qvvse2", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
   { id: "musicas-sertanejo-raiz", name: "Sertanejo Raiz", label: "Pack de Músicas Sertanejo Raiz", tone: "amber", image: "musicas-sertanejo-raiz-modao.png", checkout: "https://checkout.brazhits.com.br/checkout/cmseva9y80d1301pvob0fcl3e?offer=av91syt", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
   { id: "musicas-mpb-antigo", name: "MPB Antigo", label: "Pack de Músicas MPB Antigo", tone: "rose", image: "musicas-mpb-antigo.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmsuhszbh07ho01pzarg3bwlc?offer=i9a1fy7", quantity: "+500 MÚSICAS", quality: "MP3 320 kbps", type: "musicas" },
