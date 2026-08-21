@@ -10,13 +10,14 @@ type Pack = {
 };
 
 const clipPacks: Pack[] = [
-  { id: "clips-super-pack", name: "Todos os Clipes", label: "Super Pack de Clipes", tone: "premium", image: "super-pack-clipes.jpeg", checkout: "https://checkout.brazhits.com.br/checkout/cmsrukfkk00sw01pw02ag439i?offer=osiy9l6", quantity: "+1.700 CLIPES", quality: "MP4 1080p", type: "clips", featured: true },
+  { id: "clips-super-pack", name: "Todos os Clipes", label: "Super Pack de Clipes", tone: "premium", image: "super-pack-clipes.jpeg", checkout: "https://checkout.brazhits.com.br/checkout/cmsrukfkk00sw01pw02ag439i?offer=osiy9l6", quantity: "+2.000 CLIPES", quality: "MP4 1080p", type: "clips", featured: true },
   { id: "clips-sertanejo", name: "Sertanejo", label: "Pack de Clipes Sertanejo", tone: "lime", image: "pack-sertanejo-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms3nyhqu00q101ojp5uriham?offer=7JM1ZJ5", quantity: "+500 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-sertanejo-raiz", name: "Sertanejo Raiz", label: "Pack de Clipes Sertanejo Raiz", tone: "amber", image: "pack-sertanejo-raiz-modao.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms3qwbhf02ey01q2uric6p6b?offer=ct9lej3", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-mpb-antigo", name: "MPB Antigo", label: "Pack de Clipes MPB Antigo", tone: "rose", image: "pack-mpb-antigo.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmsufz27u06cd01pzpp5wjgbk?offer=zlpfum6", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-forro-arrocha", name: "Forró / Arrocha", label: "Pack de Clipes Forró + Arrocha", tone: "orange", image: "pack-forro-arrocha-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms50qbo101h701pxcrnwl7zn?offer=142tf5w", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-pagode", name: "Pagode", label: "Pack de Clipes Pagode", tone: "cyan", image: "pack-pagode-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms50tr7p01jg01pxv6hv8di0?offer=3wkrmwo", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-rock-nacional", name: "Rock Nacional", label: "Pack de Clipes Rock Nacional", tone: "violet", image: "pack-rock-nacional.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms514n1801rx01ocfhh2ar5y?offer=d58z8ku", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
+  { id: "clips-rock-internacional", name: "Rock Internacional", label: "Pack de Clipes Rock Internacional", tone: "rose", image: "pack-rock-internacional.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cmt0ez5ql011y01pxino66l6v?offer=ltry1q5", quantity: "+300 CLIPES", quality: "MP4 1080p", type: "clips" },
   { id: "clips-gospel", name: "Gospel", label: "Pack de Clipes Gospel", tone: "blue", image: "pack-gospel-2026.jpg", checkout: "https://checkout.brazhits.com.br/checkout/cms50v6lf01kk01pxtf8e60hm?offer=064ob69", quantity: "+200 CLIPES", quality: "MP4 1080p", type: "clips" },
 ];
 
@@ -66,7 +67,7 @@ export default function Home() {
       <nav className="catalog-nav" aria-label="Escolha o tipo de Pack">
         <div className="shell catalog-switch">
           <button className={isClips ? "active" : ""} type="button" aria-pressed={isClips} onClick={() => selectCatalog("clips")}>
-            <span>Packs de Clipes</span><small>8 opções em MP4 1080p</small>
+            <span>Packs de Clipes</span><small>9 opções em MP4 1080p</small>
           </button>
           <button className={!isClips ? "active" : ""} type="button" aria-pressed={!isClips} onClick={() => selectCatalog("musicas")}>
             <span>Packs de Músicas</span><small>7 opções em MP3 320 kbps</small>
